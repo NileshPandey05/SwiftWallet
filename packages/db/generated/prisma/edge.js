@@ -141,7 +141,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\saksh\\OneDrive\\Desktop\\paytm_\\packages\\db\\generated\\prisma",
+      "value": "/workspaces/paytm_/packages/db/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -150,12 +150,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-1.1.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\saksh\\OneDrive\\Desktop\\paytm_\\packages\\db\\prisma\\schema.prisma",
+    "sourceFilePath": "/workspaces/paytm_/packages/db/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -169,6 +169,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
