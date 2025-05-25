@@ -141,7 +141,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\saksh\\OneDrive\\Desktop\\paytm_\\packages\\db\\generated\\prisma",
+      "value": "/workspaces/paytm_/packages/db/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -150,12 +150,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-1.1.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\saksh\\OneDrive\\Desktop\\paytm_\\packages\\db\\prisma\\schema.prisma",
+    "sourceFilePath": "/workspaces/paytm_/packages/db/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -169,16 +169,17 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
-        "fromEnvVar": "DATABASE_URI",
+        "fromEnvVar": "DATABASE_URL",
         "value": null
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URI\")\n}\n\nmodel User {\n  id       Int     @id @default(autoincrement())\n  email    String? @unique\n  name     String?\n  number   String  @unique\n  password String\n}\n\nmodel Merchant {\n  id        Int       @id @default(autoincrement())\n  email     String    @unique\n  name      String\n  auth_Type Auth_Type\n}\n\nenum Auth_Type {\n  Google\n  GitHub\n}\n",
-  "inlineSchemaHash": "f08c8a756ff6ce66c6e021fd9d1ef2d69db7ff5b1fe8ed3369236f50805c156a",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id       Int     @id @default(autoincrement())\n  email    String? @unique\n  name     String?\n  number   String  @unique\n  password String\n}\n\nmodel Merchant {\n  id        Int       @id @default(autoincrement())\n  email     String    @unique\n  name      String\n  auth_Type Auth_Type\n}\n\nenum Auth_Type {\n  Google\n  GitHub\n}\n",
+  "inlineSchemaHash": "1f53bff2c76dc6f51b9b28ddf386eeabf54ac0dac1d00a387e5ed31f24e71fb0",
   "copyEngine": true
 }
 config.dirname = '/'
@@ -190,7 +191,7 @@ config.compilerWasm = undefined
 
 config.injectableEdgeEnv = () => ({
   parsed: {
-    DATABASE_URI: typeof globalThis !== 'undefined' && globalThis['DATABASE_URI'] || typeof process !== 'undefined' && process.env && process.env.DATABASE_URI || undefined
+    DATABASE_URL: typeof globalThis !== 'undefined' && globalThis['DATABASE_URL'] || typeof process !== 'undefined' && process.env && process.env.DATABASE_URL || undefined
   }
 })
 
