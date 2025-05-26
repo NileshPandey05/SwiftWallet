@@ -132,7 +132,24 @@ exports.Prisma.MerchantScalarFieldEnum = {
   id: 'id',
   email: 'email',
   name: 'name',
-  auth_Type: 'auth_Type'
+  auth_type: 'auth_type'
+};
+
+exports.Prisma.OnRampTransactionScalarFieldEnum = {
+  id: 'id',
+  status: 'status',
+  token: 'token',
+  provider: 'provider',
+  amount: 'amount',
+  startTime: 'startTime',
+  userId: 'userId'
+};
+
+exports.Prisma.BalanceScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  amount: 'amount',
+  locked: 'locked'
 };
 
 exports.Prisma.SortOrder = {
@@ -149,14 +166,22 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-exports.Auth_Type = exports.$Enums.Auth_Type = {
+exports.AuthType = exports.$Enums.AuthType = {
   Google: 'Google',
-  GitHub: 'GitHub'
+  Github: 'Github'
+};
+
+exports.OnRampStatus = exports.$Enums.OnRampStatus = {
+  Success: 'Success',
+  Failure: 'Failure',
+  Processing: 'Processing'
 };
 
 exports.Prisma.ModelName = {
   User: 'User',
-  Merchant: 'Merchant'
+  Merchant: 'Merchant',
+  OnRampTransaction: 'OnRampTransaction',
+  Balance: 'Balance'
 };
 
 /**

@@ -15,9 +15,37 @@ app.post("/hdfcWebhook", (req, res) => {
     }
     try {
         prisma.$transaction([
-            prisma.
+            prisma.balance.updateMany({
+                where: {
+                    userId: Number(paymentInformation.userId)
+                },
+                data: {
+                    amount: {
+                        // You can also get this from your DB
+                        increment: Number(paymentInformation.amount)
+                    }
+                }
+            }),
+            prisma.onRampTransaction.updateMany({
+                where: {
+                    token: paymentInformation.token
+                }, 
+                data: {
+                    status: "Success",
+                }
+            })
         ])
-    } catch (error) {
-        
+
+        res.json({
+            message: "Captured"
+        })
+
+    } catch (e) {
+        console.error(e);
+        res.status(411).json({
+            message: "Error while processing webhook"
+        })
     }
 })
+
+app.listen(3002)
