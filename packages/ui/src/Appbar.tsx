@@ -14,21 +14,12 @@ export const Appbar = ({
     onSignin,
     onSignout
 }: AppbarProps) => {
-    return(
-        <div className="flex justify-between items-center border-b border-gray-200 px-6 py-4 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-sm">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                PayTM
-            </div>
-            <div className="flex items-center space-x-4">
-                {user?.name && (
-                    <span className="text-gray-700 font-medium">
-                        Welcome, {user.name}
-                    </span>
-                )}
-                <Button onClick={user ? onSignout : onSignin}>
-                    {user ? "Logout" : "Login"}
-                </Button>
-            </div>
+    return <div className="flex justify-between border-b px-4 border-slate-300">
+        <div className="text-lg flex flex-col justify-center">
+            PayTM
         </div>
-    )
+        <div className="flex flex-col justify-center pt-2">
+            <Button onClick={user ? onSignout : onSignin}>{user ? "Logout" : "Login"}</Button>
+        </div>
+    </div>
 }
