@@ -42,12 +42,11 @@ export async function p2pTransfer(to: string, amount: number) {
           });
 
           await tx.p2pTransfer.create({
-            data:{
-                from: Number(from),
-                to: toUser.id,
-                amount: amount,
-                status: "Success",
-                createdAt: new Date()
+            data: {
+              fromUserId: Number(from),
+              toUserId: toUser.id,
+              amount,
+              timestamp: new Date()
             }
           })
     });
