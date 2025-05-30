@@ -13,7 +13,6 @@ A Paytm-like digital wallet web application that enables users to add money to t
 
 ### 🛒 Merchant Functionality:
 - Accept payments from users
-- Manage product listings
 - Withdraw funds to bank
 - View payment history
 
